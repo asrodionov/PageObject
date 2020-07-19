@@ -20,7 +20,7 @@ public class MoneyTransferPage {
 
     public DashboardPage replenishCardAction(int sum, int card){
         amount.setValue(String.valueOf(sum));
-        from.setValue(DataHelper.getCardNumber(card).getNumber());
+        from.setValue(DataHelper.getCardInfo(card).getNumber());
         buttonActionTransfer.click();
         return new DashboardPage();
     }
