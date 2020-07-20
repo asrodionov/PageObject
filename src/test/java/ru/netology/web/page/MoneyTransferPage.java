@@ -13,14 +13,13 @@ public class MoneyTransferPage {
     private SelenideElement from = $("[data-test-id=from] input");
     private SelenideElement buttonActionTransfer = $("[data-test-id=action-transfer]");
 
-
     public MoneyTransferPage() {
         heading.shouldBe(visible);
     }
 
     public DashboardPage replenishCardAction(int sum, int card){
         amount.setValue(String.valueOf(sum));
-        from.setValue(DataHelper.getCardNumber(card).getNumber());
+        from.setValue(DataHelper.getCardInfo(card).getNumber());
         buttonActionTransfer.click();
         return new DashboardPage();
     }
